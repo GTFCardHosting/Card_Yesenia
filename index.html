@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Business Card</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Verdana, Geneva, sans-serif;
+    }
+
+    .bg-image {
+      background-image: url('https://i.imgur.com/3a00L4x.gif');
+      background-size: 100% auto;
+      background-position: 50% 35%;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .overlay-image {
+      position: absolute;
+      top: 0;
+      left: 72px;
+      right: 72px;
+      height: 50%;
+      background-image: url('');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      opacity: 0.3;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .card-container {
+      position: relative;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 30px 20px;
+      max-width: 360px;
+      width: 100%;
+      border-radius: 10px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .portrait {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #ffffff50;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    h1 {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1em;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      margin: 12px 0;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      padding: 8px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .info-item img.icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .info-item a {
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .info-item:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .info-item:hover img.icon {
+      transform: scale(1.2);
+      filter: brightness(1.5);
+    }
+
+    .info-item:hover a {
+      color: #f1f1f1;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 600px) {
+      .card-container {
+        padding: 20px 15px;
+      }
+
+      .portrait {
+        width: 100px;
+        height: 100px;
+      }
+
+      .overlay-image {
+        left: 32px;
+        right: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-image">
+  <div class="overlay-image"></div>
+
+  <div class="card-container">
+    <img src="https://files.catbox.moe/03ulz7.png" alt="Portrait" class="portrait" />
+    <h1>Yesenia Zaragoza</h1>
+    <h2>Office Manager</h2>
+
+    <div class="info-item">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone Icon" class="icon" />
+      <a href="tel:+18188972079,131">(818) 897-2079 ext:131</a>
+    </div>
+
+    <div class="info-item">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="Email Icon" class="icon" />
+      <a href="mailto:yesenia@gracianatortilla.com">yesenia@gracianatortilla.com</a>
+    </div>
+
+    <div class="info-item">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="Location Icon" class="icon" />
+      <a href="https://maps.app.goo.gl/GznKDzucmNwPy2wP8" target="_blank">Our Sylmar Location</a>
+    </div>
+
+    <div class="info-item">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="Location Icon" class="icon" />
+      <a href="https://maps.app.goo.gl/5rD36bT492RHwwUG9" target="_blank">Our Bakersfield Location</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
