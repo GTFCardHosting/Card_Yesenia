@@ -11,10 +11,49 @@
       font-family: Verdana, Geneva, sans-serif;
     }
 
-    .gradient-background {
-      background: linear-gradient(300deg, #000000, #301701, #301701, #efbf04, #301701, #301701, #000000);
+    .bg-image {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      background-image: url('https://files.catbox.moe/yh1om7.png'); 
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* 🪵 Metal texture overlay */
+    .metal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://cdn.textures4photoshop.com/tex/thumbs/scratched-metal-texture-seamless-2009.jpg'); 
+      background-size: 400px 400px;
+      mix-blend-mode: multiply;
+      opacity: 0.75;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(300deg, #000000, #302601, #302601, #efbf04, #302601, #302601, #000000);
       background-size: 240% 240%;
       animation: gradient-animation 24s ease infinite;
+      opacity: 0.35;
+      mix-blend-mode: color-burn;
+      z-index: 1;
+      pointer-events: none;
     }
 
     @keyframes gradient-animation {
@@ -29,46 +68,9 @@
       }
     }
 
-    .bg-image {
-      min-height: 100vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      box-sizing: border-box;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .overlay-image {
-      position: absolute;
-      top: 0;
-      left: 72px;
-      right: 72px;
-      height: 50%;
-      background-image: url('');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      opacity: 0.3;
-      z-index: 1;
-      pointer-events: none;
-      animation: drift 30s linear infinite;
-    }
-
-    @keyframes drift {
-      0% {
-        background-position: 0% 0%;
-      }
-      100% {
-        background-position: 100% 100%;
-      }
-    }
-
     .card-container {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       background-color: rgba(0, 0, 0, 0.6);
       color: white;
       padding: 30px 20px;
@@ -78,12 +80,10 @@
       text-align: center;
       backdrop-filter: blur(10px);
       overflow: hidden;
-
-      /* 🧊 Frosted Glass Edge */
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.07);
       box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-        0 0 20px rgba(255, 255, 255, 0.2);
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+        0 0 20px rgba(255, 255, 255, 0.05);
     }
 
     .card-container::before {
@@ -102,18 +102,18 @@
     }
 
     @keyframes shimmer {
-       0% {
-     transform: translateX(-50%) rotate(25deg);
-     opacity: 0;
+      0% {
+        transform: translateX(-50%) rotate(25deg);
+        opacity: 0;
+      }
+      25% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(50%) rotate(25deg);
+        opacity: 1;
+      }
     }
-    25% {
-     opacity: 1;
-    }
-    100% {
-     transform: translateX(50%) rotate(25deg);
-     opacity: 1;
-    }
-  }
 
     .portrait {
       width: 120px;
@@ -204,18 +204,14 @@
         width: 100px;
         height: 100px;
       }
-
-      .overlay-image {
-        left: 32px;
-        right: 32px;
-      }
     }
   </style>
 </head>
 <body>
 
-<div class="bg-image gradient-background">
-  <div class="overlay-image"></div>
+<div class="bg-image">
+  <div class="metal-overlay"></div>
+  <div class="gradient-overlay"></div>
 
   <div class="card-container">
     <img src="https://files.catbox.moe/03ulz7.png" alt="Portrait" class="portrait" />
