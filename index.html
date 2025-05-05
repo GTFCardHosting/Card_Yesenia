@@ -24,6 +24,7 @@
       background-image: url('https://files.catbox.moe/yh1om7.png'); 
       background-size: cover;
       background-position: center;
+      z-index: 1;
     }
 
     /* 🪵 Metal texture overlay */
@@ -97,7 +98,7 @@
       transform: rotate(25deg);
       animation: shimmer 1s ease-out forwards;
       pointer-events: none;
-      z-index: 1;
+      z-index: 2;
       backdrop-filter: blur(8px);
     }
 
@@ -124,7 +125,7 @@
       border: 3px solid #ffffff50;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
       animation: glow 3s ease-in-out infinite;
-      z-index: 2;
+      z-index: 3;
       position: relative;
     }
 
@@ -139,7 +140,7 @@
 
     h1, h2, .info-item {
       position: relative;
-      z-index: 2;
+      z-index: 3;
     }
 
     h1 {
